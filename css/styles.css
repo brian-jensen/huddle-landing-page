@@ -1,6 +1,8 @@
 :root {
   --font-primary: 'Open Sans', sans-serif;
   --font-secondary: 'Poppins', sans-serif;
+  --color-primary: hsl(0, 0%, 100%);
+  --color-secondary: hsl(257.1, 40.5%, 49.4%);
 }
 
 * {
@@ -9,7 +11,10 @@
   padding: 0;
 }
 
-input, select, textarea {
+input,
+select,
+textarea,
+button {
   border: none;
   box-shadow: none;
   outline: none;
@@ -26,17 +31,94 @@ a:active {
   color: inherit;
 }
 
-ul, ol {
+ul,
+ol {
   list-style: none;
 }
 
 body {
   font-family: var(--font-primary);
+  color: var(--color-primary);
+  background: var(--color-secondary);
 }
 
-.wrapper {
+header {
+  padding: 40px;
+  background: url(../images/bg-mobile.svg) no-repeat center center/cover;
+}
+
+header .logo {
+  width: 132pt;
+  height: 25pt;
+  transform: translate(-27px, -7px);
+}
+
+header .illustration {
+  display: block;
+  width: 100%;
+  height: 100%;
+  margin-top: 70px;
+  object-fit: cover;
+}
+
+header,
+main,
+footer {
+  max-width: 375px;
+  margin: 0 auto;
+}
+
+
+main {
+  padding: 35px;
+  text-align: center;
+}
+
+main h1 {
+  font-family: var(--font-secondary);
+  font-size: 24px;
+  line-height: 36px;
+}
+
+main p {
+  margin-bottom: 24px;
+  font-size: 16px;
+  line-height: 24px;
+}
+
+main button {
+  height: 40px;
+  width: 200px;
+  border-radius: 20px;
+  font-size: 12px;
+  line-height: 18px;
+  background: var(--color-primary);
+  color: var(--color-secondary);
+  box-shadow: 1px 3px 5px hsla(0, 0%, 0%, 0.3);
+}
+
+footer {
+  display: flex;
+  justify-content: center;
+  margin: 40px auto;
+}
+
+footer a {
   display: flex;
   justify-content: center;
   align-items: center;
-  min-height: 100vh;
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  border: 1px solid white
+}
+
+footer a + a {
+  margin-left: 10px;
+}
+
+footer a svg {
+  width: 13px;
+  height: 13px;
+  fill: var(--color-primary);
 }
