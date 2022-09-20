@@ -3,6 +3,7 @@
   --font-secondary: 'Poppins', sans-serif;
   --color-primary: hsl(0, 0%, 100%);
   --color-secondary: hsl(257.1, 40.5%, 49.4%);
+  --color-link-hover: hsl(321.5, 100%, 66.1%);
 }
 
 * {
@@ -64,7 +65,7 @@ header .illustration {
 header,
 main,
 footer {
-  max-width: 375px;
+  max-width: 768px;
   margin: 0 auto;
 }
 
@@ -76,25 +77,32 @@ main {
 
 main h1 {
   font-family: var(--font-secondary);
-  font-size: 24px;
-  line-height: 36px;
+  font-size: 1.5rem;
+  line-height: 2.25rem;
 }
 
 main p {
   margin-bottom: 24px;
-  font-size: 16px;
-  line-height: 24px;
+  font-size: 1rem;
+  line-height: 1.5rem;
 }
 
 main button {
-  height: 40px;
-  width: 200px;
+  height: 2.5rem;
+  width: 12.5rem;
   border-radius: 20px;
-  font-size: 12px;
-  line-height: 18px;
+  font-size: 0.75rem;
+  line-height: 1.125rem;
   background: var(--color-primary);
   color: var(--color-secondary);
   box-shadow: 1px 3px 5px hsla(0, 0%, 0%, 0.3);
+  transition: background, color, 0.25s ease-in-out;
+}
+
+main button:hover {
+  background: hsl(300, 69.3%, 70.6%);
+  color: var(--color-primary);
+  cursor: pointer;
 }
 
 footer {
@@ -110,10 +118,15 @@ footer a {
   width: 28px;
   height: 28px;
   border-radius: 50%;
-  border: 1px solid white
+  border: 1px solid white;
+  transition: border-color 0.25s ease-in-out;
 }
 
-footer a + a {
+footer a:hover {
+  border-color: var(--color-link-hover);
+}
+
+footer a+a {
   margin-left: 10px;
 }
 
@@ -121,4 +134,92 @@ footer a svg {
   width: 13px;
   height: 13px;
   fill: var(--color-primary);
+  transition: fill 0.25s ease-in-out;
+}
+
+footer a:hover svg {
+  fill: var(--color-link-hover);
+}
+
+@media (min-width: 1440px) {
+
+  .wrapper {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    max-width: 1440px;
+    margin: auto;
+    padding: 80px 80px 40px 80px;
+    background: url(../images/bg-desktop.svg) no-repeat right 80px top/1360px 100%;
+    min-height: 100vh;
+  }
+
+  header,
+  main,
+  footer {
+    padding: 0;
+    margin: 0;
+    max-width: unset
+  }
+
+  header {
+    background: none;
+    flex-basis: 56%;
+  }
+
+  header .logo {
+    width: 204pt;
+    height: 37pt;
+    transform: translate(-38px, -26px);
+  }
+
+  header .illustration {
+    max-width: 712px;
+    max-height: 493px;
+    margin-top: 55px;
+  }
+
+  main {
+    margin: auto 0;
+    flex-basis: 40%;
+    text-align: left;
+  }
+
+  main h1 {
+    margin-top: 0;
+    font-size: 2.5rem;
+    line-height: 3.75rem;
+  }
+
+  main p {
+    font-size: 1.125rem;
+    line-height: 1.6875rem;
+  }
+
+  main button {
+    width: 12.5rem;
+    height: 3.5rem;
+    font-size: 1.125rem;
+    line-height: 1.6875rem;
+    box-shadow: 2px 4px 9px 3px hsla(0, 0%, 0%, 0.3);
+    border-radius: 28px;
+  }
+
+  footer {
+    margin-top: auto;
+    margin-left: auto;
+    justify-content: flex-end;
+    flex-basis: 100%;
+  }
+
+  footer a {
+    width: 40px;
+    height: 40px;
+  }
+
+  footer a svg {
+    width: 20px;
+    height: 20px;
+  }
+
 }
